@@ -3,10 +3,14 @@
 #define _SUPPORT_FUNCTION_H_
 #include <iostream>
 #include <fstream>
-#include <stdlib.h>
 #include <ctime>
 #include <string>
 #include <vector>
+#include <cstring>
+
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>
 
 #define PATH_DATA "C:/Users/David/source/repos/Quiz/data/"
 

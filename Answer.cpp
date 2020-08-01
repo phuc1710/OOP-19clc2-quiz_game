@@ -2,28 +2,28 @@
 
 Answer::Answer()
 {
-	this->_Answer = "...";
+	this->_answer = "...";
 	this->_choice = 'A';
 	this->_status = 0;
 }
 
 Answer::Answer(string ans, char choice, bool status)
 {
-	this->_Answer = ans;
+	this->_answer = ans;
 	this->_choice = choice;
 	this->_status = status;
 }
 
 Answer::Answer(const Answer& answer)
 {
-	this->_Answer = answer._Answer;
+	this->_answer = answer._answer;
 	this->_choice = answer._choice;
 	this->_status = answer._status;
 }
 
 void Answer::print()
 {
-	cout << this->_choice << ". " << this->_Answer;
+	cout << this->_choice << ". " << this->_answer;
 }
 
 bool saveListAnswer(string FilePath, Answer answer[4])
@@ -34,7 +34,7 @@ bool saveListAnswer(string FilePath, Answer answer[4])
 		return false;
 	for (int i = 0; i < 4; ++i)
 	{
-		fout << answer[i]._Answer << endl;
+		fout << answer[i]._answer << endl;
 		fout << answer[i]._choice << endl;
 		fout << answer[i]._status << endl;
 	}
@@ -53,7 +53,7 @@ bool loadListAnswer(string FilePath, Answer answer[4])
 
 	for (int i = 0; i < 4; i++)
 	{
-		fin >> answer[i]._Answer;
+		fin >> answer[i]._answer;
 		fin >> answer[i]._choice;
 		fin >> answer[i]._status;
 	}
