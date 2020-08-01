@@ -16,7 +16,7 @@
 
 using namespace std;
 
-char random(char choices[4]);
+char randomChoice(char choices[4]);
 string convertIntToString(int num);
 string creatDirectoryToAnswerFile(int QuesNum, string topic, int difficulty);
 #endif // !_SUPPORTFUNCTION_H_

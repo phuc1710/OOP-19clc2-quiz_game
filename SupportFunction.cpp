@@ -1,6 +1,6 @@
 #include "SupportFunction.h"
 
-char random(char choices[4])
+char randomChoice(char choices[4])
 {
 	srand(time(NULL));
 	int check(0);
