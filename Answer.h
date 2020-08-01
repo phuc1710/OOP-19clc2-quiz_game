@@ -15,9 +15,10 @@ public:
 	Answer(const Answer& answer);
 
 	void print();
-
+	
 	friend bool saveListAnswer(string FilePath, Answer answer[4]);
 	friend bool loadListAnswer(string FilePath, Answer answer[4]);
+	friend void editListAnswer(string FilePath, Answer answer[4]);
 };
 
 #endif // !_ANSWER_H_

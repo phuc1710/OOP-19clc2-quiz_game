@@ -19,6 +19,7 @@ string User::getPassword()
 {
 	return this->_password;
 }
+
 void loadUser(string filename, User*& aUsers, int& n) {
 
 	ifstream fin(filename);

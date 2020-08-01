@@ -1,19 +1,39 @@
 #include "SupportFunction.h"
 
-char randomChoice(char choices[4])
+Random::Random()
 {
 	srand(time(NULL));
+}
+
+int Random::next()
+{
+	return rand();
+}
+
+int Random::next(int num)
+{
+	if (num < 2)
+		return -1;
+	return rand() % num;
+}
+
+void randomChoice(char choices[4])
+{
+	Random random;
 	int check(0);
 	char ran_char;
-	do
+	for (int i = 0; i < 4; i++)
 	{
-		check = 0;
-		ran_char = 65 + rand() % 4;
-		for (int i = 0; i < 3; i++)
-			if (ran_char == choices[i])
-				check++;
-	} while (check != 0);
-	return ran_char;
+		do
+		{
+			check = 0;
+			ran_char = 65 + random.next(4);
+			for (int i = 0; i < 3; i++)
+				if (ran_char == choices[i])
+					check++;
+		} while (check != 0);
+		choices[i] = ran_char;
+	}
 }
 
 string convertIntToString(int num)

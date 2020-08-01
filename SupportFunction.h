@@ -10,15 +10,24 @@
 
 #define _CRTDBG_MAP_ALLOC  
 #include <stdlib.h>  
-#include <crtdbg.h>
+#include <crtdbg.h> //check memory leak library
 
-#define PATH_DATA "C:/Users/David/source/repos/Quiz/data/"
+#define PATH_DATA "C:/Users/David/Documents/GitHub/OOP-19clc2-quiz_game/data/"
 
 using namespace std;
 
-char randomChoice(char choices[4]);
+class Random
+{
+public:
+	Random();
+	int next();
+	int next(int num);
+};
+
+void randomChoice(char choices[4]);
 string convertIntToString(int num);
 string creatDirectoryToAnswerFile(int QuesNum, string topic, int difficulty);
+
 #endif // !_SUPPORTFUNCTION_H_
 
 
