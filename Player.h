@@ -4,8 +4,8 @@
 class Player : public User
 {
 private:
-	int score;
-	int help[4];
+	int _score;
+	int _help[4];
 public:
 
 };
