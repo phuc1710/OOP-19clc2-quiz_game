@@ -1,4 +1,10 @@
-﻿  Answer.cpp
+﻿  Administrator.cpp
+  Answer.cpp
+  Player.cpp
+  Question.cpp
+  Quiz.cpp
+  SupportFunction.cpp
+C:\Users\David\Documents\GitHub\OOP-19clc2-quiz_game\SupportFunction.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   main.cpp
   Generating Code...
   Lab PROJECT - Quiz Game.vcxproj -> C:\Users\David\Documents\GitHub\OOP-19clc2-quiz_game\x64\Debug\Lab PROJECT - Quiz Game.exe

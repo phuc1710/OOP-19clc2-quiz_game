@@ -1,5 +1,25 @@
 #include "Player.h"
 
+void Player::setUserName(string str)
+{
+	this->_username = str;
+}
+
+void Player::setPassword(string str)
+{
+	this->_password = str;
+}
+
+string Player::getUserName()
+{
+	return this->_username;
+}
+
+string Player::getPassword()
+{
+	return this->_password;
+}
+
 int Player::getScore()
 {
 	return this->_score;
@@ -32,7 +52,7 @@ void loadPlayer(string filename, Player*& plrs, int& n)
 
 		ignore = "";
 		getline(fin, ignore, '\n');
-		plrs[i].setUsername(ignore);
+		plrs[i].setUserName(ignore);
 
 		ignore = "";
 		getline(fin, ignore, '\n');
@@ -69,3 +89,4 @@ void writePlayer(string filename, Player*& plrs, const int n)
 
 	fout.close();
 }
+
