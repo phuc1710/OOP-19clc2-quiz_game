@@ -5,7 +5,7 @@ void editPlayer(string filename)
 	Player* plrs;
 	int n;
 
-	loadPlayer(filename, plrs, n);
+	loadPlayerList(filename, plrs, n);
 
 	string temp;
 	for (int i = 0; i < n; i++)
@@ -31,7 +31,7 @@ void editPlayer(string filename)
 	cin >> temp;
 	plrs[choice - 1].setPassword(temp);
 
-	writePlayer(filename, plrs, n);
+	savePlayerList(filename, plrs, n);
 
 	delete[]plrs;
 }

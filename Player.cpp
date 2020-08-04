@@ -30,7 +30,7 @@ int Player::getHelp(int choice)
 	return this->_help[choice];
 }
 
-void loadPlayer(string filename, Player*& plrs, int& n)
+void loadPlayerList(string filename, Player*& plrs, int& n)
 {
 	ifstream fin(filename);
 
@@ -66,7 +66,7 @@ void loadPlayer(string filename, Player*& plrs, int& n)
 	fin.close();
 }
 
-void writePlayer(string filename, Player*& plrs, const int n)
+void savePlayerList(string filename, Player*& plrs, const int n)
 {
 	ofstream fout(filename);
 

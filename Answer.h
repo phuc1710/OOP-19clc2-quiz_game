@@ -16,9 +16,9 @@ public:
 
 	void print();
 	
-	friend bool saveListAnswer(string FilePath, Answer answer[4]);
-	friend bool loadListAnswer(string FilePath, Answer answer[4]);
-	friend void editListAnswer(string FilePath, Answer answer[4]);
+	friend bool saveAnswerList(string FilePath, Answer answer[4]);
+	friend bool loadAnswerList(string FilePath, Answer answer[4]);
+	friend void editAnswerList(string FilePath, Answer answer[4]);
 };
 
 #endif // !_ANSWER_H_

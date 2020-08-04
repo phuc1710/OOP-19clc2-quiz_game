@@ -2,13 +2,11 @@
 
 int main()
 {
-   /* Answer a[4];
     string FilePath = "C:/Users/David/Documents/GitHub/OOP-19clc2-quiz_game/data/test.bin";
-    loadListAnswer(FilePath, a);
-    for (int i = 0; i < 4; i++)
-    {
-        a[i].print();
-        cout << endl;
-    }*/
+    /*Player* plrs = new Player;
+    plrs->setUserName("name");
+    plrs->setPassword("pass");
+    savePlayerList(FilePath, plrs, 1);*/
+    login();
     return 0;
 }

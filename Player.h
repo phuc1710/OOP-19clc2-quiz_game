@@ -7,7 +7,7 @@ private:
 	string _username;
 	string _password;
 	int _score;
-	int _help[4];
+	int _help[4] = { 1,2,3,4 };
 public:
 	void setUserName(string str);
 	void setPassword(string str);
@@ -17,8 +17,8 @@ public:
 	int getHelp(int choice);
 };
 
-void loadPlayer(string filename, Player*& plrs, int& n);
-void writePlayer(string filename, Player*& plrs, const int n);
+void loadPlayerList(string filename, Player*& plrs, int& n);
+void savePlayerList(string filename, Player*& plrs, const int n);
 
 #endif // !_PLAYER_H_
 
