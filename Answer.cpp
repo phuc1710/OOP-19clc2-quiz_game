@@ -40,7 +40,6 @@ bool saveListAnswer(string FilePath, Answer answer[4])
 
 	fout.close();
 	return true;
-
 }
 
 bool loadListAnswer(string FilePath, Answer answer[4])
