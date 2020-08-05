@@ -13,7 +13,10 @@ public:
 	string getUserName();
 	string getPassword();
 	int getScore();
+	void editPlayerSelf(string filename, Player*& plrs, int& n);
+	void createPlayer(string filename, Player*& plrs, int& n);
 };
+
 
 void loadPlayerList(string filename, Player*& plrs, int& n);
 void savePlayerList(string filename, Player*& plrs, const int n);
