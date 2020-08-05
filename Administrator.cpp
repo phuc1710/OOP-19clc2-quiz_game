@@ -35,3 +35,63 @@ void editPlayer(string filename)
 
 	delete[]plrs;
 }
+
+void loadAdministratorList(string filename, Administrator*& admins, int& n)
+{
+	ifstream fin(filename);
+
+	if (fin.is_open() == false)
+	{
+		cout << "Cannot open file!" << filename;
+		return;
+	}
+
+	fin >> n;
+
+	admins = new Administrator[n];
+	string ignore = "";
+	getline(fin, ignore, '\n');
+
+	for (int i = 0; i < n; i++)
+	{
+		getline(fin, ignore, '\n');
+
+		ignore = "";
+		getline(fin, ignore, '\n');
+		admins[i].setUserName(ignore);
+
+		ignore = "";
+		getline(fin, ignore, '\n');
+		admins[i].setPassword(ignore);
+
+		ignore = "";
+		getline(fin, ignore, '\n');
+		admins[i].getScore();
+	}
+
+	fin.close();
+}
+
+void saveAdministratorList(string filename, Administrator*& admins, const int n)
+{
+	ofstream fout(filename);
+
+	if (!fout.is_open())
+	{
+		cout << "Cannot open file!" << filename;
+		return;
+	}
+
+	fout << n << endl;
+
+	string temp;
+
+	for (int i = 0; i < n; i++) {
+		fout << endl;
+		fout << admins[i].getUserName() << endl;
+		fout << admins[i].getPassword() << endl;
+		fout << admins[i].getScore() << endl;
+	}
+
+	fout.close();
+}

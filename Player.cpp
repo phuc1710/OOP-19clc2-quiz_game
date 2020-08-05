@@ -25,11 +25,6 @@ int Player::getScore()
 	return this->_score;
 }
 
-int Player::getHelp(int choice)
-{
-	return this->_help[choice];
-}
-
 void loadPlayerList(string filename, Player*& plrs, int& n)
 {
 	ifstream fin(filename);

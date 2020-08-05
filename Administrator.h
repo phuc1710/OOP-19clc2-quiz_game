@@ -7,4 +7,7 @@ public:
 	
 };
 void editPlayer(string filename);
+void saveAdministratorList(string filename, Administrator*& admins, const int n);
+void loadAdministratorList(string filename, Administrator*& admins, int& n);
+
 #endif // !_ADMINISTRATOR_H_

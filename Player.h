@@ -7,14 +7,12 @@ private:
 	string _username;
 	string _password;
 	int _score;
-	int _help[4] = { 1,2,3,4 };
 public:
 	void setUserName(string str);
 	void setPassword(string str);
 	string getUserName();
 	string getPassword();
 	int getScore();
-	int getHelp(int choice);
 };
 
 void loadPlayerList(string filename, Player*& plrs, int& n);
