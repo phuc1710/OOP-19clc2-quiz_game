@@ -11,9 +11,11 @@ private:
 	char _diff;
 	string _topic;
 	string _ques;
-	vector<Answer> _answers;
+	Answer _answers[4];
+	friend bool loadQuestionList(string FilePath, Question*& ques);
+	friend bool saveQuestionList(string FilePath, Question*& ques, int n);
+	friend void editQuestionList(string FilePath, Question*& ques, int n);
 };
 
-void loadQuestion(string FilePath, Question*& ques);
-
 #endif // !_QUESTION_H_
+

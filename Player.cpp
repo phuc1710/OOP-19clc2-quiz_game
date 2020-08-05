@@ -1,16 +1,31 @@
 #include "Player.h"
 
+void Player::setUserName(string str)
+{
+	this->_username = str;
+}
+
+void Player::setPassword(string str)
+{
+	this->_password = str;
+}
+
+string Player::getUserName()
+{
+	return this->_username;
+}
+
+string Player::getPassword()
+{
+	return this->_password;
+}
+
 int Player::getScore()
 {
 	return this->_score;
 }
 
-int Player::getHelp(int choice)
-{
-	return this->_help[choice];
-}
-
-void loadPlayer(string filename, Player*& plrs, int& n)
+void loadPlayerList(string filename, Player*& plrs, int& n)
 {
 	ifstream fin(filename);
 
@@ -32,7 +47,7 @@ void loadPlayer(string filename, Player*& plrs, int& n)
 
 		ignore = "";
 		getline(fin, ignore, '\n');
-		plrs[i].setUsername(ignore);
+		plrs[i].setUserName(ignore);
 
 		ignore = "";
 		getline(fin, ignore, '\n');
@@ -46,7 +61,7 @@ void loadPlayer(string filename, Player*& plrs, int& n)
 	fin.close();
 }
 
-void writePlayer(string filename, Player*& plrs, const int n)
+void savePlayerList(string filename, Player*& plrs, const int n)
 {
 	ofstream fout(filename);
 
@@ -69,3 +84,4 @@ void writePlayer(string filename, Player*& plrs, const int n)
 
 	fout.close();
 }
+

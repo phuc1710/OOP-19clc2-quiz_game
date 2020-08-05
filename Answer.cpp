@@ -26,7 +26,7 @@ void Answer::print()
 	cout << this->_choice << ". " << this->_answer;
 }
 
-bool saveListAnswer(string FilePath, Answer answer[4])
+bool saveAnswerList(string FilePath, Answer answer[4])
 {
 	ofstream fout(FilePath);
 
@@ -43,7 +43,7 @@ bool saveListAnswer(string FilePath, Answer answer[4])
 
 }
 
-bool loadListAnswer(string FilePath, Answer answer[4])
+bool loadAnswerList(string FilePath, Answer answer[4])
 {
 	ifstream fin(FilePath);
 
@@ -62,10 +62,10 @@ bool loadListAnswer(string FilePath, Answer answer[4])
 	return true;
 }
 
-void editListAnswer(string FilePath, Answer answer[4])
+void editAnswerList(string FilePath, Answer answer[4])
 {
 	Answer answers[4];
-	loadListAnswer(FilePath, answers);
+	loadAnswerList(FilePath, answers);
 	for (int i = 0; i < 4; i++)
 	{
 		bool choice;
@@ -89,7 +89,7 @@ void editListAnswer(string FilePath, Answer answer[4])
 			answers[i]._status = 1;
 		answers[i]._status = 0;
 	}
-	saveListAnswer(FilePath, answers);
+	saveAnswerList(FilePath, answers);
 }
 
 
