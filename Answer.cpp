@@ -36,9 +36,11 @@ void loadAnswerList(ifstream& fin, Answer AnswerList[4])
 	randomChoice(choices);
 	for (int i = 0; i < 4; i++)
 	{
-		fin >> AnswerList[i]._answer;
+		getline(fin, AnswerList[i]._answer);
 		AnswerList[i]._choice = choices[i];
 		fin >> AnswerList[i]._status;
+		if(i < 3)
+			fin.ignore();
 	}
 }
 

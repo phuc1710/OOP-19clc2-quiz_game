@@ -1,0 +1,120 @@
+1
+History
+1
+Who was the first man to walk on the moon?
+Buzz Aldrin
+0
+Neil Armstrong
+1
+Mark Hamill
+0
+Astronaut Audrey
+0
+1
+History
+1
+Which country gave the Statue of Liberty as a gift to the Unites States of America?
+England
+0
+France
+1
+Canada
+0
+Mexico
+0
+1
+History
+1
+Which war started in 1939 and ended in 1945?
+World War 1
+0
+Vietnam War
+0
+World War 2
+1
+The Franklands War
+0
+1
+History
+2
+Who was the first President of the United States of America?
+George Bush
+0
+George W. Bush
+0
+George Washington
+1
+Ronald Reagan
+0
+1
+History
+3
+Who was President of South Africa from 1994 to 1999?
+Nelson Mandela
+1
+Kgalema Motlanthe
+0
+Jacob Zuma
+0
+Cyril Ramaphosa
+0
+2
+History
+5
+Who was the second man to walk on the moon?
+Buzz Aldrin
+0
+Neil Armstrong
+1
+Mark Hamill
+0
+Astronaut Audrey
+0
+2
+History
+6
+Who did Henry VIII first marry?
+Catherine of Aragon
+1
+Meghan Markle
+0
+Kate Middleton
+0
+Holly Willoughby
+0
+2
+History
+4
+Which is Adolf Hitler's date of birth?
+April 20, 1888
+0
+April 20, 1889
+1
+April 25, 1888
+0
+April 25, 1889
+0
+3
+History
+8
+In which country was the Battle of Hastings fought?
+Scotland
+0
+Wales
+0
+England
+1
+France
+0
+3
+History
+9
+Which Roman emperor built a gigantic wall across the North East of England in 122 AD?
+Augustus
+0
+Hadrian
+1
+Nero
+0
+Caecar
+0

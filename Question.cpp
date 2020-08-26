@@ -5,13 +5,16 @@ void loadQuestionList(string FilePath, vector <Question>& QuestionList)
 	ifstream fin(FilePath);
 	if (!fin.is_open())
 		return;
+	
 	while (!fin.eof())
 	{
 		Question question;
 		fin >> question._diff;
-		fin >> question._topic;
+		fin.ignore();
+		getline(fin, question._topic);
 		fin >> question._point;
-		fin >> question._ques;
+		fin.ignore();
+		getline(fin, question._ques);
 		loadAnswerList(fin, question._answers);
 		if (fin.eof())
 			return;
