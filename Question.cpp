@@ -5,7 +5,6 @@ void loadQuestionList(string FilePath, vector <Question>& QuestionList)
 	ifstream fin(FilePath);
 	if (!fin.is_open())
 		return;
-	
 	while (!fin.eof())
 	{
 		Question question;
@@ -146,6 +145,7 @@ void createTopic()
 		NewQuestion.create(topic, '1');
 		QuestionList.push_back(NewQuestion);
 	}
+	system("cls");
 	cout << "How many question do you want to create in difficulty 2?(at least 3)" << endl;
 	cin >> choice;
 	if (choice < 3)
@@ -156,6 +156,7 @@ void createTopic()
 		NewQuestion.create(topic, '2');
 		QuestionList.push_back(NewQuestion);
 	}
+	system("cls");
 	cout << "How many question do you want to create in difficulty 3?(at least 2)" << endl;
 	cin >> choice;
 	if (choice < 2)

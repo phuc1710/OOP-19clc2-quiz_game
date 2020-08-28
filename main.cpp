@@ -9,10 +9,10 @@ int main()
     //login();
    //createTopic();
     //Question q;
-    /*vector<Question> Q;
+    vector<Question> Q;
     loadQuestionList(QUESTION_PATH_DATA, Q);
     cout << "t " << Q.size() << endl;
     for (int i = 0; i < Q.size(); i++)
-        Q[i].print();*/
+        Q[i].print();
     return 0;
 }

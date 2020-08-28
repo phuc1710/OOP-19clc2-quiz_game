@@ -118,3 +118,373 @@ Nero
 0
 Caecar
 0
+1
+Sport
+2
+How many players are on a baseball team?
+4 players
+0
+5 players
+1
+6 players
+0
+7 players
+0
+1
+Sport
+1
+Which equipment is used in badminton?
+Racquet
+0
+Quaffle
+0
+Bludgers
+0
+Shuttercock
+1
+1
+Sport
+1
+What is the name of wrestler "The Rock"?
+Dwayne Johnson
+1
+Vin Diesel
+0
+Jason Statham
+0
+John Cena
+0
+1
+Sport
+1
+Who holds the mens's 100 meters and 200 meters world record?
+Usain Bolt
+1
+Tyson Gay
+0
+Yohan Blake
+0
+Asafa Powell
+0
+1
+Sport
+3
+Who is the king of Golf?
+Phil Mickelson
+0
+Justin Thomas
+0
+Tiger Woods
+1
+Rory Mcllroy
+0
+2
+Sport
+6
+Which soccer team is known as Gunners?
+Liverpool
+0
+Chelsea
+0
+Manchester United
+0
+Arsenal
+1
+2
+Sport
+4
+In which country did the Olympic games originate?
+Italy
+0
+Switzerland
+0
+Greece
+1
+Turkey
+0
+2
+Sport
+5
+Which is the national sport of Canada?
+Lacrosse
+0
+Ice hockey
+1
+Cricket
+0
+Rugby
+0
+3
+Sport
+8
+What is the diameter of the basketball hoop?
+15 inches
+0
+16 inches
+0
+18 inches
+1
+20 inches
+0
+3
+Sport
+9
+Who was the winner of 1985 Wimbledon tennis tournament?
+Boris Becker
+1
+Ivan Lendl
+0
+Henri Leconte
+0
+Tim Mayotte
+0
+1
+Game
+2
+How many players are on a MOBA game?
+10 players
+1
+6 players
+0
+8 players
+0
+12 players
+0
+1
+Game
+3
+What's the main mission in a MOBA game?
+Win combat
+0
+Get as much kill as posible
+0
+Get as much creep as posible
+0
+Destroy enermy's Base
+1
+1
+Game
+2
+How to win a CSGO's casual match?
+Get as much kill as posible
+0
+Defuse bomb successfully as CT
+1
+Save as much money as possible
+0
+Defuse bomb successfully as T
+0
+1
+Game
+1
+What's the name "LOL" stand for?
+League Of Laugh
+0
+League Of Legends
+1
+League Of Lions
+0
+League Of Lucks
+0
+1
+Game
+1
+What's the name "GTA V" stand for?
+Grand Theft Audition V
+0
+Grand Tournament Audition V
+0
+Good Thieves Auto V
+0
+Grand Theft Auto V
+1
+2
+Game
+4
+What's the best option against Sorcerer in Teamfight Tactics?
+Mystic
+1
+Vanguard
+0
+Dark Star
+0
+Battlecast
+0
+2
+Game
+6
+Which city will the League Of Legend 2020 Season World Championship take place?
+Shanghai (China)
+1
+Roma (Italia)
+0
+Tokyo (Japan)
+0
+Washington D.C (USA)
+0
+2
+Game
+4
+Which role doesn't exist in League Of Legend?
+AD Carry
+0
+Defuser
+1
+Support
+0
+Jungle
+0
+3
+Game
+8
+What is the most played game on steam in 7/2020?
+Counter-Strike: Global Offensive
+0
+Dota 2
+0
+PLAYERUNKNOWN'S BATTLEGROUNDS
+1
+Grand Theft Auto V
+0
+3
+Game
+9
+Who was the winner of Hearthstone Grandmasters Global Finals 2019?
+Brian "bloodyface" Eason
+0
+Kim "Surrender" Jung-soo
+0
+Xiaomeng “VKLiooon” Li
+1
+Gao "Leaoh" Yang
+0
+1
+Technology
+1
+Which is the brand that manufactured the iPhone?
+Apple
+1
+Samsung
+
+0
+Xiaomi
+0
+Huawei
+0
+1
+Technology
+1
+Which is an output device of the computer?
+Keyboard
+0
+Mouse
+0
+Scanner
+0
+Monitor
+1
+1
+Technology
+2
+Which is NOT a basic type of information that computer can process?
+Document
+0
+Video
+1
+Image
+0
+Sound
+0
+1
+Technology
+2
+Which is NOT a mobile application distribution platform?
+Google Play
+0
+AppStore
+0
+Youtube
+1
+Tap
+0
+1
+Technology
+1
+Which is an online meetting application?
+Microsoft Office
+0
+Zoom
+1
+My Study Life
+0
+Google Collab
+0
+2
+Technology
+4
+Which technology is VR headset an application of?
+Virtual reality
+1
+Image processing
+
+0
+Computer vision
+0
+3D processing
+
+0
+2
+Technology
+5
+Which is the least popular desktop operating system?
+Windows
+0
+MacOS
+0
+Linux
+0
+ChromeOS
+
+1
+2
+Technology
+6
+Which is NOT a product line of intel Corp?
+Iris
+0
+Xe Graphics
+0
+Xeon
+0
+Ryzen
+1
+3
+Technology
+8
+Who is the creator of the C++ programming language?
+John Backus
+
+0
+John McCarthy
+0
+Bjarne Stroustrup
+1
+Guido van Rossum
+
+
+0
+3
+Technology
+8
+Up to 8/2020, which is the second most biggest market share in wordwide smartphone distribution?
+Apple
+
+0
+Samsung
+
+0
+Huawei
+
+1
+Xiaomi
+0
