@@ -16,8 +16,10 @@ inline void showAdministratorMenu() {
 	cout << "1. Change password" << endl;
 	cout << "2. Edit user's info " << endl;
 	cout << "3. Edit question list" << endl;
+	cout << "SELECT YOUR OPTION" << endl;
 
-	cin >> choice;
+	while (choice != 1 && choice != 2 && choice != 3)
+		cin >> choice;
 
 	if (choice == 1) {
 		editPlayer("Administrators.txt");
