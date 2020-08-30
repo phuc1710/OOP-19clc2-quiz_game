@@ -1,3 +1,6 @@
-﻿  Question.cpp
-C:\Users\David\Documents\GitHub\OOP-19clc2-quiz_game\Question.cpp(126,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Lab PROJECT - Quiz Game.vcxproj -> C:\Users\David\Documents\GitHub\OOP-19clc2-quiz_game\x64\Debug\Lab PROJECT - Quiz Game.exe
+﻿  Quiz.cpp
+  main.cpp
+D:\SOURCE CODE\PROJECT QUIZ GAME\OOP-19clc2-quiz_game\main.cpp(2,1): warning C4005: 'QUESTION_PATH_DATA': macro redefinition
+D:\SOURCE CODE\PROJECT QUIZ GAME\OOP-19clc2-quiz_game\SupportFunction.h(17): message : see previous definition of 'QUESTION_PATH_DATA'
+  Generating Code...
+  Lab PROJECT - Quiz Game.vcxproj -> D:\SOURCE CODE\PROJECT QUIZ GAME\OOP-19clc2-quiz_game\x64\Debug\Lab PROJECT - Quiz Game.exe
