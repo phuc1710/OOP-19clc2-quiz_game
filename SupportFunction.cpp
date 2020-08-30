@@ -36,20 +36,33 @@ void randomChoice(char choices[4])
 	}
 }
 
-string convertIntToString(int num)
+void loadTopicList(string FilePath, vector<string>& TopicList)
 {
-	char c[255];
-	_itoa(num, c, 10);
-	return string(c);
+	ifstream fin(FilePath);
+
+	if (!fin.is_open())
+		return;
+	while (!fin.eof())
+	{
+		string topic;
+		fin >> topic;
+		TopicList.push_back(topic);
+	}
+
+	fin.close();
 }
 
-string creatDirectoryToAnswerFile(int QuesNum, string topic, int difficulty)
+void saveTopicList(string FilePath, vector<string> TopicList)
 {
-	string FilePath = PATH_DATA;
-	string tail;
-	string q_num = convertIntToString(QuesNum);
-	string d_num = convertIntToString(difficulty);
-	tail = "answers/ans-" + topic + "-" + d_num + "-ques" + q_num + ".bin";
-	return FilePath += tail;
+	ofstream fout(FilePath);
+
+	if (!fout.is_open())
+		return;
+	for (int i = 0; i < TopicList.size(); i++)
+		fout << TopicList[i] << endl;
+
+	fout.close();
 }
+
+
 

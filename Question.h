@@ -2,20 +2,24 @@
 #define _QUESTION_H_
 
 #include "Answer.h"
-
-using namespace std;
-
 class Question
 {
 private:
 	char _diff;
 	string _topic;
+	int _point; // diff = 1(1 - 3), diff = 2(4 - 6), diff = 3(7 - 9)
 	string _ques;
 	Answer _answers[4];
-	friend bool loadQuestionList(string FilePath, Question*& ques);
-	friend bool saveQuestionList(string FilePath, Question*& ques, int n);
-	friend void editQuestionList(string FilePath, Question*& ques, int n);
+public:
+	void print();
+	Question& create(string topic = "", char diff = ' ');
+	friend void loadQuestionList(string FilePath, vector <Question>& QuestionList);
+	friend void loadQuestionListWithTopicAndDifficulty(string FilePath, vector <Question>& QuestionList, string topic, char diff);
+	friend void saveQuestionList(string FilePath, vector <Question> QuestionList);
+	friend void editQuestionList(vector <Question>& QuestionList);
 };
+
+void createTopic();
 
 #endif // !_QUESTION_H_
 

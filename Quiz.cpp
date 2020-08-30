@@ -30,7 +30,7 @@ void login()
 	getline(cin, username);
 	cout << "Password: ";
 	getline(cin, password);
-	loadPlayerList("C:/Users/David/Documents/GitHub/OOP-19clc2-quiz_game/data/test.bin", plrs, NumPlayer);
+	loadPlayerList(QUESTION_PATH_DATA, plrs, NumPlayer);
 	int check = checkIdentity(username, password, plrs, NumPlayer, pos);
 	cout << check << endl;
 }
