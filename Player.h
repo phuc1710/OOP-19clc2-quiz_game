@@ -8,15 +8,16 @@ private:
 	string _password;
 	int _score;
 public:
-	void setUserName(string str);
-	void setPassword(string str);
+	Player setUserName(string str);
+	Player setPassword(string str);
+	Player setScore(int score);
 	string getUserName();
 	string getPassword();
 	int getScore();
 };
 
-void loadPlayerList(string filename, Player*& plrs, int& n);
-void savePlayerList(string filename, Player*& plrs, const int n);
+void loadPlayerList(string filename, vector<Player>& players);
+void savePlayerList(string filename, vector<Player> players);
 
 #endif // !_PLAYER_H_
 

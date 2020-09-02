@@ -2,16 +2,15 @@
 
 void editPlayer(string filename)
 {
-	Player* plrs;
-	int n;
+	vector<Player> players;
 
-	loadPlayerList(filename, plrs, n);
+	loadPlayerList(filename, players);
 
 	string temp;
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < players.size(); i++)
 	{
 		cout << i + 1 << ")";
-		temp = plrs[i].getUserName();
+		temp = players[i].getUserName();
 		cout << temp << endl;
 
 		/*temp = aUsers[i].getPassword();
@@ -19,24 +18,22 @@ void editPlayer(string filename)
 	}
 
 	cout << endl;
-	cout << "SELECT USER YOU WANT TO CHANGE: ";
+	cout << "SELECT PLAYER YOU WANT TO CHANGE: ";
 	int choice;
 	cin >> choice;
 
 	cout << "New username: ";
 	cin >> temp;
-	plrs[choice - 1].setUserName(temp);
+	players[choice - 1].setUserName(temp);
 
 	cout << "New password: ";
 	cin >> temp;
-	plrs[choice - 1].setPassword(temp);
+	players[choice - 1].setPassword(temp);
 
-	savePlayerList(filename, plrs, n);
-
-	delete[]plrs;
+	savePlayerList(filename, players);
 }
 
-void loadAdministratorList(string filename, Administrator*& admins, int& n)
+void loadAdministratorList(string filename, vector<Administrator>& admins)
 {
 	ifstream fin(filename);
 
@@ -45,34 +42,21 @@ void loadAdministratorList(string filename, Administrator*& admins, int& n)
 		cout << "Cannot open file!" << filename;
 		return;
 	}
-
-	fin >> n;
-
-	admins = new Administrator[n];
-	string ignore = "";
-	getline(fin, ignore, '\n');
-
-	for (int i = 0; i < n; i++)
+	while(!fin.eof())
 	{
-		getline(fin, ignore, '\n');
-
-		ignore = "";
-		getline(fin, ignore, '\n');
-		admins[i].setUserName(ignore);
-
-		ignore = "";
-		getline(fin, ignore, '\n');
-		admins[i].setPassword(ignore);
-
-		ignore = "";
-		getline(fin, ignore, '\n');
-		admins[i].getScore();
+		Administrator admin;
+		string username, password;
+		getline(fin, username);
+		admin.setUserName(username);
+		getline(fin, password);
+		admin.setPassword(password);
+		admins.push_back(admin);
 	}
 
 	fin.close();
 }
 
-void saveAdministratorList(string filename, Administrator*& admins, const int n)
+void saveAdministratorList(string filename, vector<Administrator> admins)
 {
 	ofstream fout(filename);
 
@@ -81,16 +65,14 @@ void saveAdministratorList(string filename, Administrator*& admins, const int n)
 		cout << "Cannot open file!" << filename;
 		return;
 	}
-
-	fout << n << endl;
-
-	string temp;
-
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < admins.size(); i++)
+	{
 		fout << endl;
 		fout << admins[i].getUserName() << endl;
-		fout << admins[i].getPassword() << endl;
-		fout << admins[i].getScore() << endl;
+		if (i == admins.size() - 1)
+			fout << admins[i].getPassword();
+		else
+			fout << admins[i].getPassword() << endl;
 	}
 
 	fout.close();

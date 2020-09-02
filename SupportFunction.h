@@ -15,8 +15,8 @@
 #include <crtdbg.h> //check memory leak library
 
 #define QUESTION_PATH_DATA "data/QuestionList.txt"
-#define PLAYER_PATH_DATA "data/PlayerList.bin"
-#define ADMINISTRATOR_PATH_DATA "data/AdministratorList.bin"
+#define PLAYER_PATH_DATA "data/PlayerList.txt"
+#define ADMINISTRATOR_PATH_DATA "data/AdministratorList.txt"
 #define TOPIC_PATH_DATA "data/TopicList.txt"
 
 using namespace std;

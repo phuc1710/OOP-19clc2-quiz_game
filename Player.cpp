@@ -1,13 +1,20 @@
 #include "Player.h"
 
-void Player::setUserName(string str)
+Player Player::setUserName(string str)
 {
 	this->_username = str;
+	return *this;
 }
 
-void Player::setPassword(string str)
+Player Player::setPassword(string str)
 {
 	this->_password = str;
+	return *this;
+}
+Player Player::setScore(int score)
+{
+	this->_score = score;
+	return *this;
 }
 
 string Player::getUserName()
@@ -25,7 +32,7 @@ int Player::getScore()
 	return this->_score;
 }
 
-void loadPlayerList(string filename, Player*& plrs, int& n)
+void loadPlayerList(string filename, vector<Player>& players)
 {
 	ifstream fin(filename);
 
@@ -34,34 +41,23 @@ void loadPlayerList(string filename, Player*& plrs, int& n)
 		cout << "Cannot open file!" << filename;
 		return;
 	}
-
-	fin >> n;
-
-	plrs = new Player[n];
-	string ignore = "";
-	getline(fin, ignore, '\n');
-
-	for (int i = 0; i < n; i++)
+	while(!fin.eof())
 	{
-		getline(fin, ignore, '\n');
-
-		ignore = "";
-		getline(fin, ignore, '\n');
-		plrs[i].setUserName(ignore);
-
-		ignore = "";
-		getline(fin, ignore, '\n');
-		plrs[i].setPassword(ignore);
-
-		ignore = "";
-		getline(fin, ignore, '\n');
-		plrs[i].getScore();
+		Player player;
+		string username, password, score;
+		getline(fin, username);
+		player.setUserName(username);
+		getline(fin, password);
+		player.setPassword(password);
+		getline(fin, score);
+		int NumScore = stoi(score);
+		player.setScore(NumScore);
+		players.push_back(player);
 	}
-
 	fin.close();
 }
 
-void savePlayerList(string filename, Player*& plrs, const int n)
+void savePlayerList(string filename, vector<Player> players)
 {
 	ofstream fout(filename);
 
@@ -70,16 +66,15 @@ void savePlayerList(string filename, Player*& plrs, const int n)
 		cout << "Cannot open file!" << filename;
 		return;
 	}
-
-	fout << n << endl;
-
-	string temp;
-
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < players.size(); i++)
+	{
 		fout << endl;
-		fout << plrs[i].getUserName() << endl;
-		fout << plrs[i].getPassword() << endl;
-		fout << plrs[i].getScore() << endl;
+		fout << players[i].getUserName() << endl;
+		fout << players[i].getPassword() << endl;
+		if(i == players.size() - 1)
+			fout << players[i].getScore();
+		else
+			fout << players[i].getScore() << endl;
 	}
 
 	fout.close();

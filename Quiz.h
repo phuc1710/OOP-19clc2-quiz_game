@@ -3,8 +3,9 @@
 #include "Administrator.h"
 #include "Player.h"
 
-int checkIdentity(string username, string password, Player*& plrs, int NumPlayer, int& pos);
+int checkIdentity(string username, string password, vector<Player> players, vector<Administrator> admins, int& pos);
 void login();
+void showAdministratorMenu();
 
 #endif // !_QUIZ_H_
 
