@@ -7,6 +7,7 @@
 
 int checkIdentity(string username, string password, Player*& plrs,
 	int NumPlayer, int& pos);
+
 void login();
 
 inline void showAdministratorMenu() {
