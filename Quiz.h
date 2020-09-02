@@ -5,33 +5,47 @@
 #include "Player.h"
 #include "Question.h"
 
-int checkIdentity(string username, string password, Player*& plrs,
-	int NumPlayer, int& pos);
+int checkIdentity(string username, string password, Player *&plrs,
+				  int NumPlayer, int &pos);
 
 void login();
 
-inline void showAdministratorMenu() {
+inline void showAdministratorMenu()
+{
 	int choice = 0;
 
-	cout << "ADMINISTRATOR MENU: " << endl;
-	cout << "1. Change password" << endl;
-	cout << "2. Edit user's info " << endl;
-	cout << "3. Edit question list" << endl;
+	cout << " -------ADMINISTRATOR MENU------- " << endl;
+	cout << " -------------------------------- " << endl;
+	cout << "| 1. Change password\t\t|" << endl;
+	cout << " -------------------------------- " << endl;
+	cout << "| 2. Edit user's info\t\t|" << endl;
+	cout << " -------------------------------- " << endl;
+	cout << "| 3. Edit question list\t\t|" << endl;
+	cout << " -------------------------------- " << endl;
+	cout << "| 4. Exit\t\t\t|" << endl;
+	cout << " -------------------------------- " << endl;
 	cout << "SELECT YOUR OPTION" << endl;
 
-	while (choice != 1 && choice != 2 && choice != 3)
+	while (choice != 1 && choice != 2 && choice != 3 && choice != 4)
 		cin >> choice;
 
-	if (choice == 1) {
+	if (choice == 1)
+	{
 		editPlayer("Administrators.txt");
 	}
-	else if (choice == 2) {
+	else if (choice == 2)
+	{
 		editPlayer("Users.txt");
 	}
-	else if (choice == 3) {
+	else if (choice == 3)
+	{
 		vector<Question> a;
 		loadQuestionList("QuestionList.txt", a);
 		editQuestionList(a);
+	}
+	else if (choice == 4)
+	{
+		login();
 	}
 }
 
