@@ -1,5 +1,14 @@
 #include "Player.h"
 
+Player::Player() { }
+
+Player::Player(string username, string password, int score)
+{
+	this->_username = username;
+	this->_password = password;
+	this->_score = score;
+}
+
 void Player::setUserName(string str)
 {
 	this->_username = str;
@@ -87,36 +96,10 @@ void savePlayerList(string filename, Player*& plrs, const int n)
 
 void Player::editPlayerSelf(string filename, Player*& plrs, int& n)
 {
-	fstream f(filename, ios::out | ios::in);
-
-	if (f.is_open() == false)
-	{
-		cout << "Cannot open file!" << filename;
-		return;
-	}
-
-	f >> n;
-
-	plrs = new Player[n];
-	string ignore = "";
-	getline(f, ignore, '\n');
+	loadPlayerList(filename, plrs, n);
 
 	for (int i = 0; i < n; i++)
 	{
-		getline(f, ignore, '\n');
-
-		ignore = "";
-		getline(f, ignore, '\n');
-		plrs[i].setUserName(ignore);
-
-		ignore = "";
-		getline(f, ignore, '\n');
-		plrs[i].setPassword(ignore);
-
-		ignore = "";
-		getline(f, ignore, '\n');
-		plrs[i].getScore();
-
 		if (plrs[i]._username == this->_username && plrs[i]._password == this->_password)
 		{
 			
@@ -124,39 +107,34 @@ void Player::editPlayerSelf(string filename, Player*& plrs, int& n)
 			cout << "Please enter new username: ";
 			cin >> n_username;
 			this->setUserName(n_username);
-			f << this->_username;
 
 			cout << "Please enter new password: ";
 			cin >> n_password;
 			this->setPassword(n_password);
-			f << this->_password;
 		}
 	}
 
-	f.close();
+	savePlayerList(filename, plrs, n);
 }
 
 void Player::createPlayer(string filename, Player*& plrs, int& n)
 {
-	fstream f(filename, ios::app);
-
-	if (f.is_open() == false)
-	{
-		cout << "Cannot open file!" << filename;
-		return;
-	}
+	loadPlayerList(filename, plrs, n);
 
 	Player n_player;
 	string n_username, n_password;
 	cout << "Please enter new username: ";
 	cin >> n_username;
 	n_player.setUserName(n_username);
-	f << n_player._username;
 
 	cout << "Please enter new password: ";
 	cin >> n_password;
 	n_player.setPassword(n_password);
-	f << n_player._password;
+	n_player._score = 0;
 
-	f.close();
+	plrs[n] = n_player;
+
+	n += 1;
+
+	savePlayerList(filename, plrs, n);
 }

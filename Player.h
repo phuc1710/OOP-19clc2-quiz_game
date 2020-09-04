@@ -8,6 +8,8 @@ private:
 	string _password;
 	int _score;
 public:
+	Player();
+	Player(string username, string password, int score);
 	void setUserName(string str);
 	void setPassword(string str);
 	string getUserName();
