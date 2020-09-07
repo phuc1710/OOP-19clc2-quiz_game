@@ -14,6 +14,8 @@ public:
 	string getUserName();
 	string getPassword();
 	int getScore();
+	Player editPlayer(string filename);
+	Player createPlayer(string filename);
 };
 
 void loadPlayerList(string filename, vector<Player>& players);
