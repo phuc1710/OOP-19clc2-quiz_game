@@ -2,17 +2,22 @@
 #ifndef _SUPPORT_FUNCTION_H_
 #define _SUPPORT_FUNCTION_H_
 #include <iostream>
+#include <sstream>
 #include <fstream>
 #include <ctime>
 #include <string>
 #include <vector>
 #include <cstring>
+#include <iomanip>
 
 #define _CRTDBG_MAP_ALLOC  
 #include <stdlib.h>  
 #include <crtdbg.h> //check memory leak library
 
-#define PATH_DATA "C:/Users/David/Documents/GitHub/OOP-19clc2-quiz_game/data/"
+#define QUESTION_PATH_DATA "data/QuestionList.txt"
+#define PLAYER_PATH_DATA "data/PlayerList.txt"
+#define ADMINISTRATOR_PATH_DATA "data/AdministratorList.txt"
+#define TOPIC_PATH_DATA "data/TopicList.txt"
 
 using namespace std;
 
@@ -25,8 +30,8 @@ public:
 };
 
 void randomChoice(char choices[4]);
-string convertIntToString(int num);
-string creatDirectoryToAnswerFile(int QuesNum, string topic, int difficulty);
+void loadTopicList(string FilePath, vector <string>& TopicList);
+void saveTopicList(string FilePath, vector <string> TopicList);
 
 #endif // !_SUPPORTFUNCTION_H_
 
