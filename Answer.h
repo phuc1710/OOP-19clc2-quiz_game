@@ -17,6 +17,8 @@ public:
 	friend void loadAnswerList(ifstream& fin, Answer AnswerList[4]);
 	friend void editAnswerList(Answer AnswerList[4]);
 	friend void createAnswerList(Answer AnswerList[4]);
+	bool check(char answer);
+	friend char correctChoice(Answer AnswerList[4]);
 	friend ostream& operator<< (ostream& os, const Answer& answer);
 };
 

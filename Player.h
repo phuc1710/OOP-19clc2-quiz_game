@@ -3,7 +3,7 @@
 #include "Question.h"
 class Player
 {
-private:
+protected:
 	string _username;
 	string _password;
 	int _score;
@@ -15,13 +15,11 @@ public:
 	string getPassword();
 	int getScore();
 	Player editPlayer(string filename);
-	Player createPlayer(string filename);
+	static void createPlayer(string filename);
+	void saveScore(int score);
 };
 
 void loadPlayerList(string filename, vector<Player>& players);
 void savePlayerList(string filename, vector<Player> players);
 
 #endif // !_PLAYER_H_
-
-
-

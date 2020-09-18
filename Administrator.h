@@ -4,7 +4,7 @@
 class Administrator : public Player
 {
 public:
-	
+	Administrator edit(string filename);
 };
 void editPlayer(string filename);
 void saveAdministratorList(string filename, vector<Administrator> admins);

@@ -1,5 +1,29 @@
 #include "Administrator.h"
 
+Administrator Administrator::edit(string filename)
+{
+	vector<Administrator> admin;
+	loadAdministratorList(filename, admin);
+	for (int i = 0; i < admin.size(); i++)
+	{
+		if (admin[i]._username == this->_username)
+		{
+			string str1, str2;
+
+			cout << "Please input new username: ";
+			cin >> str1;
+			this->_username = str1;
+			cout << "Please input new password: ";
+			cin >> str2;
+			this->_password = str2;
+
+			admin[i] = *this;
+		}
+	}
+	saveAdministratorList(filename, admin);
+	return *this;
+}
+
 void editPlayer(string filename)
 {
 	vector<Player> players;
@@ -67,7 +91,6 @@ void saveAdministratorList(string filename, vector<Administrator> admins)
 	}
 	for (int i = 0; i < admins.size(); i++)
 	{
-		fout << endl;
 		fout << admins[i].getUserName() << endl;
 		if (i == admins.size() - 1)
 			fout << admins[i].getPassword();

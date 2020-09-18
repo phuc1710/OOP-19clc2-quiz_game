@@ -365,7 +365,6 @@ Which is the brand that manufactured the iPhone?
 Apple
 1
 Samsung
-
 0
 Xiaomi
 0
@@ -426,12 +425,10 @@ Which technology is VR headset an application of?
 Virtual reality
 1
 Image processing
-
 0
 Computer vision
 0
 3D processing
-
 0
 2
 Technology
@@ -444,7 +441,6 @@ MacOS
 Linux
 0
 ChromeOS
-
 1
 2
 Technology
@@ -463,28 +459,22 @@ Technology
 8
 Who is the creator of the C++ programming language?
 John Backus
-
 0
 John McCarthy
 0
 Bjarne Stroustrup
 1
 Guido van Rossum
-
-
 0
 3
 Technology
 8
 Up to 8/2020, which is the second most biggest market share in wordwide smartphone distribution?
 Apple
-
 0
 Samsung
-
 0
 Huawei
-
 1
 Xiaomi
 0

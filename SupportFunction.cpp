@@ -17,6 +17,15 @@ int Random::next(int num)
 	return rand() % num;
 }
 
+bool checkDigitString(string digitString)
+{
+	for (int i = 0; i < digitString.size(); i++)
+		if (!isdigit(digitString[i]))
+			return false;
+
+	return true;
+}
+
 void randomChoice(char choices[4])
 {
 	Random random;

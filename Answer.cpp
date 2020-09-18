@@ -21,6 +21,11 @@ Answer::Answer(const Answer& answer)
 	this->_status = answer._status;
 }
 
+bool Answer::check(char answer)
+{
+	return answer - 32 == _choice && _status == true;
+}
+
 void saveAnswerList(ofstream& fout, Answer AnswerList[4])
 {
 	for (int i = 0; i < 4; ++i)
@@ -32,9 +37,10 @@ void saveAnswerList(ofstream& fout, Answer AnswerList[4])
 
 void loadAnswerList(ifstream& fin, Answer AnswerList[4])
 {
+	int i = 0;
 	char choices[4];
 	randomChoice(choices);
-	for (int i = 0; i < 4; i++)
+	for (i; i < 4; i++)
 	{
 		getline(fin, AnswerList[i]._answer);
 		AnswerList[i]._choice = choices[i];
@@ -42,6 +48,11 @@ void loadAnswerList(ifstream& fin, Answer AnswerList[4])
 		if(i < 3)
 			fin.ignore();
 	}
+
+	for (i = 0; i < 3; i++)
+		for (int j = i + 1; j < 4; j++)
+			if (AnswerList[i]._choice > AnswerList[j]._choice)
+				swap(AnswerList[i], AnswerList[j]);
 }
 
 void editAnswerList(Answer AnswerList[4])
@@ -99,11 +110,18 @@ void createAnswerList(Answer AnswerList[4])
 	}
 }
 
+char correctChoice(Answer AnswerList[4])
+{
+	for (int i = 0; i < 4; i++)
+		if (AnswerList[i]._status)
+			return AnswerList[i]._choice;
+}
+
 ostream& operator<<(ostream& os, const Answer& answer)
 {
 	stringstream writer;
 	writer << answer._choice << ". " << answer._answer;
-	os << "\t" << writer.str();
+	os << writer.str();
 	return os;
 }
 

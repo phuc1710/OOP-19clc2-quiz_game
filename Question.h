@@ -13,13 +13,15 @@ private:
 public:
 	void print();
 	Question& create(string topic = "", char diff = ' ');
+	bool checkAnswer(char answer);
+	char correctAnswer();
 	friend void loadQuestionList(string FilePath, vector <Question>& QuestionList);
 	friend void loadQuestionListWithTopicAndDifficulty(string FilePath, vector <Question>& QuestionList, string topic, char diff);
 	friend void saveQuestionList(string FilePath, vector <Question> QuestionList);
 	friend void editQuestionList(vector <Question>& QuestionList);
+	void addPoint(int& point);
 };
 
 void createTopic();
 
 #endif // !_QUESTION_H_
-

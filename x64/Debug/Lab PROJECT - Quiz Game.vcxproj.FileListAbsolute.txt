@@ -1,2 +1,2 @@
-C:\Users\David\Documents\GitHub\OOP-19clc2-quiz_game\x64\Debug\Lab PROJECT - Quiz Game.exe
-C:\Users\David\Documents\GitHub\OOP-19clc2-quiz_game\x64\Debug\Lab PROJECT - Quiz Game.pdb
+D:\OOP\OOP-19clc2-quiz_game\x64\Debug\Lab PROJECT - Quiz Game.exe
+D:\OOP\OOP-19clc2-quiz_game\x64\Debug\Lab PROJECT - Quiz Game.pdb

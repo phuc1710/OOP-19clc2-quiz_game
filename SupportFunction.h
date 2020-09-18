@@ -9,6 +9,9 @@
 #include <vector>
 #include <cstring>
 #include <iomanip>
+#include <conio.h>
+#include <cctype>
+#include <Windows.h>
 
 #define _CRTDBG_MAP_ALLOC  
 #include <stdlib.h>  
@@ -29,11 +32,9 @@ public:
 	int next(int num);
 };
 
+bool checkDigitString(string digitString);
 void randomChoice(char choices[4]);
 void loadTopicList(string FilePath, vector <string>& TopicList);
 void saveTopicList(string FilePath, vector <string> TopicList);
 
 #endif // !_SUPPORTFUNCTION_H_
-
-
-
