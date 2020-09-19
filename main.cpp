@@ -16,7 +16,7 @@ int main()
     cout << "t " << Q.size() << endl;
     for (int i = 0; i < Q.size(); i++)
         Q[i].print();*/
-
+    
     showAdministratorMenu();
 
     return 0;
