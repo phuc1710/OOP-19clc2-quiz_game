@@ -36,9 +36,6 @@ void editPlayer(string filename)
 		cout << i + 1 << ")";
 		temp = players[i].getUserName();
 		cout << temp << endl;
-
-		/*temp = aUsers[i].getPassword();
-		cout << " " << temp << endl;*/
 	}
 
 	cout << endl;
@@ -48,11 +45,11 @@ void editPlayer(string filename)
 
 	cout << "New username: ";
 	cin >> temp;
-	players[choice - 1].setUserName(temp);
+	players[choice - 1.0].setUserName(temp);
 
 	cout << "New password: ";
 	cin >> temp;
-	players[choice - 1].setPassword(temp);
+	players[choice - 1.0].setPassword(temp);
 
 	savePlayerList(filename, players);
 }

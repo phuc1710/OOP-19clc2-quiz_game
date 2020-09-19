@@ -106,12 +106,18 @@ void showAdministratorMenu(Administrator admin)
 			{
 			case '1':
 				admin.edit(ADMINISTRATOR_PATH_DATA);
+				Sleep(1000);
+				showAdministratorMenu(admin);
 				break;
 			case '2':
 				editPlayer(PLAYER_PATH_DATA);
+				Sleep(1000);
+				showAdministratorMenu(admin);
 				break;
 			case '3':
 				editQuestionList(a);
+				Sleep(1000);
+				showAdministratorMenu(admin);
 				break;
 			case '4':
 				login();
@@ -152,12 +158,16 @@ void showPlayerMenu(Player player)
 				break;
 			case '2':
 				player.editPlayer(PLAYER_PATH_DATA);
+				Sleep(1000);
+				showPlayerMenu(player);
 				break;
 			case '3':
 				showLeaderboard();
+				showPlayerMenu(player);
 				break;
 			case '4':
 				showHelp();
+				showPlayerMenu(player);
 				break;
 			case '5':
 				login();
@@ -213,6 +223,7 @@ void startGame(Player player)
 
 	for (diff; diff <= '3'; diff++)
 	{
+		question.clear();
 		showTopicMenu(topics);
 
 		while (topic == 0)
@@ -249,7 +260,7 @@ void startGame(Player player)
 				Sleep(500);
 				cout << "GAME OVER. Your score is: " << point << endl;
 				player.saveScore(point);
-				return;
+				login();
 			}
 			answer = '0';
 			cin.clear();
@@ -259,6 +270,7 @@ void startGame(Player player)
 	cout << "CONGRATULATION! YOU HAVE WON THE GAME" << endl;
 	cout << "Your score is: " << point << endl;
 	player.saveScore(point);
+	login();
 }
 
 void showHelp()
@@ -269,6 +281,7 @@ void showHelp()
 		<< "to choose the option you want. However, there is an only exception, which " << endl
 		<< "is the topic, you have to type in the number of the topic and then press Enter" << endl;
 	cout << "- After finishing the game, whether you win or lost, your score will be automatically saved." << endl;
+	system("pause");
 }
 
 void showLeaderboard()
@@ -291,4 +304,5 @@ void showLeaderboard()
 		cout << "| " << i + 1 << ". " << left << setw(21) << player[i].getUserName() << " | " << right << setw(3) << player[i].getScore() << "|" << endl;
 		cout << "---------------------------------" << endl;
 	}
+	system("pause");
 }
