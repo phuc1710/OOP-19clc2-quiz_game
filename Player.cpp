@@ -99,6 +99,9 @@ void Player::createPlayer(string filename)
 	players.push_back(n_player);
 
 	savePlayerList(filename, players);
+	cout << "User: " << username << " / " << password << " created successfully!" << endl;
+	cin.ignore();
+	system("pause");
 }
 
 void Player::saveScore(int score)

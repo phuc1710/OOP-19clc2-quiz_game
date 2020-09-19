@@ -1,6 +1,9 @@
-p1
-1
-4
+p
+p
+0
 Player2
 67890
+0
+newp
+newp
 0

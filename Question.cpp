@@ -89,7 +89,7 @@ void editQuestionList(vector <Question>& QuestionList)
 
 	bool choice;
 	int pos;
-	cout << "Enter the question you want to edit?(0/1)" << endl;
+	cout << "Enter the question you want to edit?" << endl;
 	cin >> pos;
 
 	if (pos < 1 || pos > QuestionList.size())
@@ -121,6 +121,8 @@ void editQuestionList(vector <Question>& QuestionList)
 		editAnswerList(QuestionList[pos - 1]._answers);
 
 	saveQuestionList(QUESTION_PATH_DATA, QuestionList);
+
+	cin.ignore();
 }
 
 void Question::addPoint(int& point)

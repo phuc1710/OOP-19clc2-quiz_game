@@ -73,6 +73,8 @@ void login()
 				break;
 			case '2':
 				Player::createPlayer(PLAYER_PATH_DATA);
+				
+				login();
 			case '3':
 				return;
 			}
@@ -170,6 +172,7 @@ void showPlayerMenu(Player player)
 				showPlayerMenu(player);
 				break;
 			case '5':
+				cin.ignore();
 				login();
 				break;
 			}
@@ -260,7 +263,24 @@ void startGame(Player player)
 				Sleep(500);
 				cout << "GAME OVER. Your score is: " << point << endl;
 				player.saveScore(point);
-				login();
+
+				int choice;
+				cout << "DO YOU WANT TO TRY AGAIN? (1:yes, 0:no) ";
+				cin >> choice;
+
+				while (choice != 0 && choice != 1)
+				{
+					cout << "There is no option match your choice" << endl;
+					cout << "Reselect your option: ";
+					cin >> choice;
+				}
+
+				if (choice == 1)
+				{
+					startGame(player);
+				}
+				else if (choice==0)
+					showPlayerMenu(player);
 			}
 			answer = '0';
 			cin.clear();
@@ -270,7 +290,7 @@ void startGame(Player player)
 	cout << "CONGRATULATION! YOU HAVE WON THE GAME" << endl;
 	cout << "Your score is: " << point << endl;
 	player.saveScore(point);
-	login();
+	showPlayerMenu(player);
 }
 
 void showHelp()
