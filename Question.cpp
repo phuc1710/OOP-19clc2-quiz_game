@@ -85,38 +85,42 @@ void editQuestionList(vector <Question>& QuestionList)
 	cin >> diff;
 	loadQuestionListWithTopicAndDifficulty(QUESTION_PATH_DATA, QuestionList, topic, diff);
 	for (int i = 0; i < QuestionList.size(); i++)
+		cout << "Question " << i + 1 << ": " << QuestionList[i]._ques << endl;
+
+	bool choice;
+	int pos;
+	cout << "Enter the question you want to edit?(0/1)" << endl;
+	cin >> pos;
+
+	if (pos < 1 || pos > QuestionList.size())
+		return;
+	cout << "Do you want to edit question?(0,1)" << endl;
+	cin >> choice;
+	if (choice)
 	{
-		bool choice;
-
-		cout << "Question " << i + 1 << ": " << QuestionList[i]._ques << endl
-		 << "Do you want to edit this question?(0/1)" << endl;
-		cin >> choice;
-		if (choice)
-		{
-			string NewQuestion;
-			cout << "Enter new question: ";
-			cin.ignore();
-			getline(cin, NewQuestion);
-			QuestionList[i]._ques = NewQuestion;
-		}
-
-		cout << "Do you want to edit point?(0,1)" << endl;
-		cin >> choice;
-		if (choice)
-		{
-			int point;
-			cout << "Enter new point: ";
-			cin >> point;
-			QuestionList[i]._point = point;
-		}
-
-		cout << "Do you want to edit answers?(0,1)" << endl;
-		cin >> choice;
-		if (choice)
-			editAnswerList(QuestionList[i]._answers);
-
+		string NewQuestion;
+		cout << "Enter new question: ";
+		cin.ignore();
+		getline(cin, NewQuestion);
+		QuestionList[pos - 1]._ques = NewQuestion;
 	}
-	saveQuestionList(QUESTION_PATH_DATA,QuestionList);
+
+	cout << "Do you want to edit point?(0,1)" << endl;
+	cin >> choice;
+	if (choice)
+	{
+		int point;
+		cout << "Enter new point: ";
+		cin >> point;
+		QuestionList[pos - 1]._point = point;
+	}
+
+	cout << "Do you want to edit answers?(0,1)" << endl;
+	cin >> choice;
+	if (choice)
+		editAnswerList(QuestionList[pos - 1]._answers);
+
+	saveQuestionList(QUESTION_PATH_DATA, QuestionList);
 }
 
 void Question::addPoint(int& point)
