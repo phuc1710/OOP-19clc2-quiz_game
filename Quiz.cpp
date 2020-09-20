@@ -239,9 +239,7 @@ void startGame(Player player)
 				topic = stoi(choiceString);
 			cout << "Please select again!" << endl;
 		}
-
 		loadQuestionListWithTopicAndDifficulty(QUESTION_PATH_DATA, question, topics[topic - 1.0], diff);
-
 		for (int i = 0; i < question.size(); i++)
 		{
 			system("cls");
@@ -265,7 +263,7 @@ void startGame(Player player)
 				cout << "The correct answer is: " << question[i].correctAnswer() << endl;
 				Sleep(500);
 				cout << "GAME OVER. Your score is: " << point << endl;
-				//showPlayerMenu(player);
+				showPlayerMenu(player);
 
 				if (point > player.getScore()) {
 					player.saveScore(point);

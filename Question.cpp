@@ -77,15 +77,17 @@ void saveQuestionList(string FilePath, vector <Question> QuestionList)
 
 void editQuestionList(vector <Question>& QuestionList)
 {
+	vector<Question> Topic;
 	string topic;
 	char diff;
 	cout << "Enter the topic of the question you want to edit: ";
 	getline(cin, topic);
 	cout << "Enter the difficulty of the question you want to edit: ";
 	cin >> diff;
-	loadQuestionListWithTopicAndDifficulty(QUESTION_PATH_DATA, QuestionList, topic, diff);
-	for (int i = 0; i < QuestionList.size(); i++)
-		cout << "Question " << i + 1 << ": " << QuestionList[i]._ques << endl;
+	loadQuestionListWithTopicAndDifficulty(QUESTION_PATH_DATA, Topic, topic, diff);
+	loadQuestionList(QUESTION_PATH_DATA, QuestionList);
+	for (int i = 0; i < Topic.size(); i++)
+		cout << "Question " << i + 1 << ": " << Topic[i]._ques << endl;
 
 	bool choice;
 	int pos;
@@ -94,6 +96,11 @@ void editQuestionList(vector <Question>& QuestionList)
 
 	if (pos < 1 || pos > QuestionList.size())
 		return;
+
+	for (int i = 0; i < QuestionList.size(); i++)
+		if (QuestionList[i]._ques == Topic[pos]._ques)
+			pos = i;
+
 	cout << "Do you want to edit question?(0,1)" << endl;
 	cin >> choice;
 	if (choice)
