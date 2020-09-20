@@ -1,5 +1,19 @@
 #include "Question.h"
 
+bool Question::checkAnswer(char answer)
+{
+	for (int i = 0; i < 4; i++)
+		if (this->_answers[i].check(answer))
+			return true;
+
+	return false;
+}
+
+char Question::correctAnswer()
+{
+	return correctChoice(_answers);
+}
+
 void loadQuestionList(string FilePath, vector <Question>& QuestionList)
 {
 	ifstream fin(FilePath);
@@ -15,8 +29,6 @@ void loadQuestionList(string FilePath, vector <Question>& QuestionList)
 		fin.ignore();
 		getline(fin, question._ques);
 		loadAnswerList(fin, question._answers);
-		if (fin.eof())
-			return;
 		QuestionList.push_back(question);
 	}
 
@@ -32,9 +44,11 @@ void loadQuestionListWithTopicAndDifficulty(string FilePath, vector<Question>& Q
 	{
 		Question question;
 		fin >> question._diff;
-		fin >> question._topic;
+		fin.ignore();
+		getline(fin, question._topic);
 		fin >> question._point;
-		fin >> question._ques;
+		fin.ignore();
+		getline(fin, question._ques);
 		loadAnswerList(fin, question._answers);
 		if(question._topic == topic && question._diff == diff)
 			QuestionList.push_back(question);
@@ -71,38 +85,50 @@ void editQuestionList(vector <Question>& QuestionList)
 	cin >> diff;
 	loadQuestionListWithTopicAndDifficulty(QUESTION_PATH_DATA, QuestionList, topic, diff);
 	for (int i = 0; i < QuestionList.size(); i++)
+		cout << "Question " << i + 1 << ": " << QuestionList[i]._ques << endl;
+
+	bool choice;
+	int pos;
+	cout << "Enter the question you want to edit?" << endl;
+	cin >> pos;
+
+	if (pos < 1 || pos > QuestionList.size())
+		return;
+	cout << "Do you want to edit question?(0,1)" << endl;
+	cin >> choice;
+	if (choice)
 	{
-		bool choice;
-
-		cout << "Question " << i + 1 << ": " << QuestionList[i]._ques << endl
-		 << "Do you want to edit this question?(0/1)" << endl;
-		cin >> choice;
-		if (choice)
-		{
-			string NewQuestion;
-			cout << "Enter new question: ";
-			cin.ignore();
-			getline(cin, NewQuestion);
-			QuestionList[i]._ques = NewQuestion;
-		}
-
-		cout << "Do you want to edit point?(0,1)" << endl;
-		cin >> choice;
-		if (choice)
-		{
-			int point;
-			cout << "Enter new point: ";
-			cin >> point;
-			QuestionList[i]._point = point;
-		}
-
-		cout << "Do you want to edit answers?(0,1)" << endl;
-		cin >> choice;
-		if (choice)
-			editAnswerList(QuestionList[i]._answers);
-
+		string NewQuestion;
+		cout << "Enter new question: ";
+		cin.ignore();
+		getline(cin, NewQuestion);
+		QuestionList[pos - 1]._ques = NewQuestion;
 	}
-	saveQuestionList(QUESTION_PATH_DATA,QuestionList);
+
+	cout << "Do you want to edit point?(0,1)" << endl;
+	cin >> choice;
+	if (choice)
+	{
+		int point;
+		cout << "Enter new point: ";
+		cin >> point;
+		QuestionList[pos - 1]._point = point;
+	}
+
+	cout << "Do you want to edit answers?(0,1)" << endl;
+	cin >> choice;
+	if (choice)
+		editAnswerList(QuestionList[pos - 1]._answers);
+
+	saveQuestionList(QUESTION_PATH_DATA, QuestionList);
+
+	cin.ignore();
+}
+
+void Question::addPoint(int& point)
+{
+	point += _point;
+	cout << "You have add " << _point << "points" << endl;
 }
 
 void createTopic()
@@ -120,7 +146,7 @@ void createTopic()
 		TopicList.push_back(topic);
 	else
 	{
-		int n(TopicList.size());
+		int n((int)TopicList.size());
 		for (int i = 0; i < n; i++)
 		{
 			if (topic == TopicList[i])
@@ -176,8 +202,8 @@ void Question::print()
 		<< "Difficulty: " << this->_diff << endl
 		<< "Point: " << this->_point << endl
 		<< this->_ques << endl;
-	cout << this->_answers[0] << setw(30) << this->_answers[1] << endl
-	 << this->_answers[2] << setw(30) << this->_answers[3] << endl;
+	cout << "\t" << left << setw(30) << this->_answers[0] << this->_answers[1] << endl;
+	cout << "\t" << left << setw(30) << this->_answers[2] << this->_answers[3] << endl;
 }
 
 Question& Question::create(string topic, char diff)

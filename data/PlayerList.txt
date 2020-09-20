@@ -1,6 +1,9 @@
-Player1
-12345
+p
+p
 0
 Player2
 67890
+0
+newp
+newp
 0
