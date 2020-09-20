@@ -1,9 +1,15 @@
 p
 p
-0
+8
 Player2
 67890
 0
 newp
 newp
+0
+pl
+pl
+2
+pl2
+pl2
 0
