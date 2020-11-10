@@ -32,6 +32,48 @@ int Player::getScore()
 	return this->_score;
 }
 
+void Player::createPlayer(string filename, vector<Player>& players)
+{
+	loadPlayerList(filename, players);
+
+	Player n_player;
+
+	cout << "Please input player name: ";
+	cin >> n_player._username;
+	cout << "Please input player password: ";
+	cin >> n_player._password;
+	n_player._score = 0;
+
+	
+	players.push_back(n_player);
+
+	savePlayerList(filename, players);
+}
+
+void Player::editPlayer(string filename, vector<Player>& players)
+{
+	loadPlayerList(filename, players);
+
+	for (int i = 0; i < players.size(); i++)
+	{
+		if (players[i].getUserName() == this->getUserName())
+		{
+			string str1, str2;
+
+			cout << "Please input new username: ";
+			cin >> str1;
+			this->_username = str1;
+			cout << "Please input new password: ";
+			cin >> str2;
+			this->_password = str2;
+
+			players[i] = *this;
+		}
+	}
+
+	savePlayerList(filename, players);
+}
+
 void loadPlayerList(string filename, vector<Player>& players)
 {
 	ifstream fin(filename);
